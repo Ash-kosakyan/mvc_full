@@ -1,11 +1,14 @@
 <?php
 
-require_once __DIR__ . '/Models/News.php';
+$ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
+$act = isset($_GET['act']) ? $_GET['act'] : 'All';
 
-$items = News::getAll();
-var_dump($items);
+$controllerClassName = $ctrl . 'Controller';
+$method = 'action' . $act;
 
-include __DIR__ . '/views/all.php';
+require_once __DIR__ . '/Controllers/' . $controllerClassName . '.php';
 
+$controller = new $controllerClassName;
+$controller->$method();
 
 

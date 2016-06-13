@@ -8,6 +8,7 @@ class DB {
     {
         $this->conn = mysqli_connect('localhost', 'root', '', 'articles_db');
     }
+    
     // ------------------------------------------------------------------------
     public function query($sql, $class = 'stdClass')
     {

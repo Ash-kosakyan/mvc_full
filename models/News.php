@@ -25,6 +25,13 @@ class News {
         $news = $db->query("SELECT * FROM posts", 'News');
         return $news;
     }
+    
+    public static function getOne($id)
+    {
+        $db = new DB();
+        $new = $db->query("SELECT * FROM posts WHERE id=" . $id, 'News');
+        return $new;
+    }
 }
 
 
