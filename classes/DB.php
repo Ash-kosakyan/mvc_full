@@ -10,7 +10,7 @@ class DB {
     }
     
     // ------------------------------------------------------------------------
-    public function query($sql, $class = 'stdClass')
+    public function queryAll($sql, $class = 'stdClass')
     {
         $res = mysqli_query($this->conn, $sql);
 
@@ -24,5 +24,11 @@ class DB {
         }
 
         return $ret;
+    }
+
+    // -------------------------------------------------------------------------
+    public function queryOne($sql, $class = 'stdClass')
+    {
+        return $this->queryAll($sql, $class)[0];
     }
 }

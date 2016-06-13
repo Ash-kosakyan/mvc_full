@@ -15,7 +15,7 @@ class NewsController {
     public function actionOne()
     {
         $id = $_GET['id'];
-        $item = News::getOne($id)[0];
+        $item = News::getOne($id);
         include __DIR__ . '/../views/one.php';
     }
 }
